@@ -1,4 +1,4 @@
-{% load static %}
+{% comment %} {% load static %}
 {% include 'main.html' %}
 <body class="bg-[#81D7F2]">
     {% block content %}
@@ -33,4 +33,23 @@
         </div>
    {% endblock %}
 </body>
+ {% endcomment %}
 
+
+ <!-- templates/login.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Login with Face</button>
+    </form>
+    {% if error %}
+    <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</body>
+</html>

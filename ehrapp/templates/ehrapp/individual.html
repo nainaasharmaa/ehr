@@ -7,9 +7,16 @@
             Electronic Record System
         </div>
 
-        <section class="hero flex flex-col sm:flex-row justify-center ">
+        <section class="hero flex  flex-   col sm:flex-row justify-center ">
             <figure class="align-it">
-                <img src="{% static 'Patient.jpg'%}" alt="" class="rounded-2xl mt-9 w-[80%] h-[30vh] m-6 ">
+                {% if request.path == "/individual/Nupur/" %}
+                <img src="{% static 'nupur.jpeg' %}" alt="Patient" class="rounded-2xl mt-9 w-[80%] h-[30vh] m-6">
+                {% elif request.path == "/individual/Parth/" %}
+                <img src="{% static 'parth.webp' %}" alt="Parth" class="rounded-2xl mt-9 w-[80%] h-[30vh] m-6">
+                {% else %}
+                <img src="{% static 'patient.jpg' %}" alt="Naman Punn" class="rounded-2xl mt-9 w-[80%] h-[30vh] m-6">
+                {% endif %}
+
             </figure>
             <div class="w-[80vw] bg-gradient-to-br from-[#24CBC8]  to-[#0066ffad] h-[30vh] mt-9 rounded-3xl flex text-2xl text-white  gap-8">
                 <ul class="my-8 mx-8 flex flex-col justify-between">
@@ -36,7 +43,7 @@
                 <div class="w-[50vw] z-10 bg-gradient-to-br from-[#24CBC8]  to-[#0066ffad] h-[8vh] rounded-l-3xl justify-center text-xl font-bold items-center flex">Surgeries</div>
                 <div class="w-[50vw] z-0 bg-white h-[8vh] rounded-r-3xl justify-center text-xl font-bold items-center flex ">Medicinal</div>
             </div>
-
+                
             <div class="w-[100%] z-10 bg-gradient-to-br from-[#24CBC8]  to-[#0066ffad] h-[8vh] rounded-t-3xl mt-8 ">
                 <ul class="flex justify-evenly text-xl p-5 sm:p-3">
                     <li class="mr-9">Date</li>
